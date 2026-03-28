@@ -202,7 +202,7 @@ for iter in range(max_iters):
         current_lr = scheduler.get_last_lr()[0]
         print(f"step {iter:>6d} | train loss {losses['train']:.4f} | val loss {losses['val']:.4f} | lr {current_lr:.2e}")
 
-        # ★ Save the best model checkpoint
+        # Save the best model checkpoint
         if losses['val'] < best_val_loss:
             best_val_loss = losses['val']
             torch.save(model.state_dict(), 'best_model.pt')
